@@ -1,0 +1,176 @@
+<h1>Business Hierarchy</h1>
+<div class="box">
+    <h3 class="box-title">Add New Business Unit</h3>
+
+    <div class="box-body submit-server-config">
+        <div class="row">
+            <div class="col-6 server-config-section">
+                <div class="row">
+                    <label class="col-4 control-label">Business Unit Name</label>
+                    <div class="col-8">
+                      <input type="text" [(ngModel)]="requestParam.unit_name" class="form-control" placeholder="Business Unit Name">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label class="col-4 control-label">Business Unit Desc</label>
+                    <div class="col-8">
+                      <input type="text" [(ngModel)]="requestParam.unit_desc" class="form-control" placeholder="Business Unit Desc">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label class="col-4 control-label">Business Unit Code</label>
+                    <div class="col-5">
+                      <input type="text" [(ngModel)]="requestParam.unit_code" class="form-control" placeholder="Business Unit Code">
+                    </div>
+
+                    <div class="col-3" style="text-align: end" >
+                        <button class="btn btn-primary" (click)="showDivision[1] = 1">Add Division</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="box" *ngIf="showDivision[1] === 1" >
+        <h3 class="box-title">Add New Business Division</h3>
+        <div class="box-body submit-server-config">
+            <div class="row">
+                <div class="col-6 server-config-section">
+                    <div class="row">
+                        <label class="col-4 control-label">Business Division Name</label>
+                        <div class="col-8">
+                          <input type="text" [(ngModel)]="requestParam.division_name" class="form-control" placeholder="Business Division Name">
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <label class="col-4 control-label">Business Division Desc</label>
+                        <div class="col-8">
+                          <input type="text" [(ngModel)]="requestParam.division_desc" class="form-control" placeholder="Business Division Desc">
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <label class="col-4 control-label">Business Division Code</label>
+                        <div class="col-5">
+                          <input type="text" [(ngModel)]="requestParam.division_code" class="form-control" placeholder="Business Division Code">
+                        </div>
+    
+                        <div class="col-3" style="text-align: end" >
+                            <button class="btn btn-primary" (click)="showDivision[2] = 1">Account</button>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+
+        <div class="box" *ngIf="showDivision[2] === 1" >
+            <h3 class="box-title">Add New Account</h3>
+            <div class="box-body submit-server-config">
+                <div class="row">
+                    <div class="col-6 server-config-section">
+                        <div class="row">
+                            <label class="col-4 control-label">Account Name</label>
+                            <div class="col-8">
+                              <input type="text" [(ngModel)]="requestParam.account_name" class="form-control" placeholder="Account Name">
+                            </div>
+                        </div>
+        
+                        <div class="row">
+                            <label class="col-4 control-label">Account Desc</label>
+                            <div class="col-8">
+                              <input type="text" [(ngModel)]="requestParam.account_desc" class="form-control" placeholder="Account Desc">
+                            </div>
+                        </div>
+        
+                        <div class="row">
+                            <label class="col-4 control-label">Account Code</label>
+                            <div class="col-5">
+                              <input type="text" [(ngModel)]="requestParam.account_code" class="form-control" placeholder="Account Code">
+                            </div>
+        
+                            <div class="col-3" style="text-align: end" >
+                                <button class="btn btn-primary" (click)="showDivision[3] = 1">Add Group</button>
+                            </div>
+                        </div>
+        
+                    </div>
+                </div>
+            </div>
+
+            <div class="box" *ngIf="showDivision[3] === 1" >
+                <h3 class="box-title">Add New Business Group</h3>
+                <div class="box-body submit-server-config">
+                    <div class="row">
+                        <div class="col-6 server-config-section">
+                            <div class="row">
+                                <label class="col-4 control-label">Business Group Name</label>
+                                <div class="col-8">
+                                  <input type="text" [(ngModel)]="requestParam.bg_name" class="form-control" placeholder="Business Group Name">
+                                </div>
+                            </div>
+            
+                            <div class="row">
+                                <label class="col-4 control-label">Business Group Desc</label>
+                                <div class="col-8">
+                                  <input type="text" [(ngModel)]="requestParam.bg_desc" class="form-control" placeholder="Business Group Desc">
+                                </div>
+                            </div>
+            
+                            <div class="row">
+                                <label class="col-4 control-label">Business Group Code</label>
+                                <div class="col-5">
+                                  <input type="text" [(ngModel)]="requestParam.bg_code" class="form-control" placeholder="Business Group Code">
+                                </div>
+            
+                                <div class="col-3" style="text-align: end" >
+                                    <button class="btn btn-primary" (click)="showDivision[4] = 1">Add Team</button>
+                                </div>
+                            </div>
+            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box" *ngIf="showDivision[4] === 1" >
+                    <h3 class="box-title">Add New Team</h3>
+                    <div class="box-body submit-server-config" *ngFor="let team of teams" >
+                        <div class="row">
+                            <div class="col-6 server-config-section">
+                                <div class="row">
+                                    <label class="col-4 control-label">Team Name</label>
+                                    <div class="col-8">
+                                      <input type="text" [(ngModel)]="requestParam.team_name" class="form-control" placeholder="Team Name">
+                                    </div>
+                                </div>
+                
+                                <div class="row">
+                                    <label class="col-4 control-label">Team Desc</label>
+                                    <div class="col-8">
+                                      <input type="text" [(ngModel)]="requestParam.team_desc" class="form-control" placeholder="Team Desc">
+                                    </div>
+                                </div>
+                
+                                <div class="row">
+                                    <label class="col-4 control-label">Team Code</label>
+                                    <div class="col-6">
+                                      <input type="text" [(ngModel)]="requestParam.team_code" class="form-control" placeholder="Team Code">
+                                    </div>
+                
+                                    <div class="col-1" style="text-align: end" >
+                                        <button class="btn btn-primary" (click)="saveBusinessUnitDetails()">Save</button>
+                                    </div>
+                                    <div>
+                                        
+                                    </div>
+                                </div>
+                
+                            </div>
+                        </div>
+                    </div>
+</div>
+
+

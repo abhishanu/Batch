@@ -1,0 +1,28 @@
+<h1>User Mail Configuration</h1>
+<div class="box">
+  <h3 class="box-title">Add a new user mail details</h3>
+  <div class="box-body submit-server-config">
+    <div class="row">
+      <div class="col-6 server-config-section">
+        <div class="row">
+          <label class="col-4 control-label">Email Id</label>
+          <div class="col-8">
+            <input type="text" [(ngModel)]="requestParam.Email_Id" class="form-control" placeholder="Email Domain Name">
+          </div>
+        </div>
+
+        <div class="row">
+          <label class="col-4 control-label">Domain Type</label>
+          <div class="col-8">
+            <select [(ngModel)]="requestParam.Domain_Type" class="form-control">
+              <option *ngFor="let domain of Domain_Types" [ngValue]="domain">{{domain}}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row" class="text-right">
+          <button class="btn btn-primary" (click)="saveMailId()">Save</button>
+        </div>
+    </div>
+  </div>
+</div>

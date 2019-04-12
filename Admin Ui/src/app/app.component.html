@@ -1,0 +1,7 @@
+<div [ngClass]="{'openNav':_CommonService.toggleNav}">
+  <app-header></app-header>
+  <app-side-nav></app-side-nav>
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
